@@ -1,0 +1,23 @@
+<div style="width: 400px;">
+
+    <form #form="ngForm" class="form">
+        <h4 *ngIf="!user.id">Create User</h4>
+        <h4 *ngIf="user.id">Edit User</h4>
+        <mat-form-field appearance="legacy" style="width: 100%;">
+            <input matInput placeholder="First Name" [(ngModel)]="user.firstName" name="firstName" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="legacy" style="width: 100%;">
+            <input matInput placeholder="Last Name" [(ngModel)]="user.lastName" name="lastName" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="legacy" style="width: 100%;">
+            <input matInput placeholder="Email" [(ngModel)]="user.email" (keyup.enter)="onSave()" name="email" required>
+        </mat-form-field>
+        <div style="align-self: flex-end;">
+            <button mat-raised-button color="primary" (click)="onSave(user)" [disabled]="form.invalid"
+                type="submit">Save</button>
+            <button mat-button color="primary" (click)="onCancel()" type="button">Cancel</button>
+        </div>
+    </form>
+</div>

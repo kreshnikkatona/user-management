@@ -1,0 +1,17 @@
+<mat-sidenav-container>
+  <mat-sidenav-content>
+    <div class="users-container">
+      <a [routerLink]="['/member/users', {outlets: {'side-sheet': ['create']}}]" mat-raised-button color="primary">
+        <mat-icon>add</mat-icon>Add
+      </a>
+      <div class="user-list">
+        <app-user-list></app-user-list>
+      </div>
+
+    </div>
+
+  </mat-sidenav-content>
+  <mat-sidenav mode="over" [opened]="openSidebar" position="end" disableClose="true">
+    <router-outlet name="side-sheet" (activate)="openSidebar = true" (deactivate)="openSidebar = false"></router-outlet>
+  </mat-sidenav>
+</mat-sidenav-container>
