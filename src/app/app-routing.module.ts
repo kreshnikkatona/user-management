@@ -7,7 +7,9 @@ const routes: Routes = [
     loadChildren: () => import('./member/member.module').then(m => m.MemberModule)
   },
   { path: "", component: DashboardComponent },
-  { path: 'dashboard', component: DashboardComponent }
+  { path: 'dashboard', component: DashboardComponent },
+  { path: "**", component: DashboardComponent },
+
 ];
 
 @NgModule({

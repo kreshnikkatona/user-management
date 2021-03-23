@@ -19,7 +19,11 @@ export class CreateComponent implements OnInit {
     let id = parseInt(this.route.snapshot.params.id)
     if (id) {
       this.userService.getUser(id).subscribe(res => {
-        this.user = res
+        if(res) {
+          this.user = res
+        } else {
+          this.router.navigateByUrl('member/users')
+        }
       })
     }
   }
