@@ -1,0 +1,17 @@
+table {
+    width: 100%;
+  }
+
+
+  .users-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+
+  }
+
+  .user-list{
+    align-self: stretch;
+    margin-top: 10px;
+  }
